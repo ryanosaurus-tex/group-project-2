@@ -2,6 +2,16 @@ body {
 	background-color: #3f5765;
 }
 
+.container {
+	max-width: 100%;
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 980px;
+	}
+}
+
 /*------navbar styles------*/
 .navbar {
 	background-color: #2b3a42;
@@ -59,10 +69,12 @@ body {
 
 /*------jumbotron styles------*/
 .jumbotron {
-	margin: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 	background-color: #efefef;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
+
 }
 
 	/*form styles*/
