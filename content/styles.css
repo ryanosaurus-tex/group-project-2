@@ -1,0 +1,87 @@
+body {
+	background-color: #3f5765;
+}
+
+/*------navbar styles------*/
+.navbar {
+	background-color: #2b3a42;
+}
+	/*nav links*/
+	a.nav-link:link {
+		color: #efefef;
+		text-decoration: none;	
+	}
+
+	a.nav-link:visited {
+		color: #efefef;
+		text-decoration: none;	
+	}
+
+	a.nav-link:hover {
+		color: #ff530d;
+		text-decoration: none;	
+	}
+
+	a.nav-link:active {
+		color: #efefef;
+		text-decoration: none;	
+	}
+
+/*navbar collapse button (bars icon) */
+#collapseButton {
+	color: #efefef;
+}
+
+/*navbar logo */
+#heartbeatIcon {
+	color: #ff530d;
+}
+	/*navbar logo link*/
+	a.navbar-brand:link {
+		color: #efefef;
+		text-decoration: none;	
+	}
+
+	a.navbar-brand:visited {
+		color: #efefef;
+		text-decoration: none;	
+	}
+
+	a.navbar-brand:hover {
+		color: #ff530d;
+		text-decoration: none;	
+	}
+
+	a.navbar-brand:active {
+		color: #efefef;
+		text-decoration: none;	
+	}
+
+/*------jumbotron styles------*/
+.jumbotron {
+	margin: 1rem;
+	background-color: #efefef;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+	/*form styles*/
+	#inputAge {
+		width: 3rem;
+		margin-left: .35rem;
+		margin-right: .35rem;
+	}
+
+	#inlineRadioM {
+		margin-left: 1rem;
+	}
+
+	/*#userVariablesForm {
+		border: 5px solid red;
+
+	}*/
+
+	#searchButton {
+		background-color: #bdd4de;
+	}
+
