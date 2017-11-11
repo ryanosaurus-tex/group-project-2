@@ -12,6 +12,7 @@ body {
 	}
 }
 
+
 /*------navbar styles------*/
 .navbar {
 	background-color: #2b3a42;
@@ -97,3 +98,18 @@ body {
 		background-color: #bdd4de;
 	}
 
+
+/*------item card styles------*/
+.itemCardBody {
+	padding: .5rem;	
+	background-color: #bdd4de;
+
+}
+
+.itemCardTitle {
+	margin-bottom: 0;
+}
+
+#searchResultsCard {
+	margin-top: 1rem;
+}

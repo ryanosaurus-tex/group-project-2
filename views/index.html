@@ -45,25 +45,117 @@
       </ul>
     </div>
   </nav>
+
+  <!-- primary container -->
   <div class="container">
 
-    <!-- Add a search/add new items card up here, always visible for quick access -->
-    <div class="jumbotron"> 
+    <!-- Add a search/add new items -->
+    <div class="jumbotron">
+
+      <!-- SEARCH BOX --> 
       <div class="row">
-        <div class="col-sm-10 offset-sm-1">
+        <div class="col-sm-12">
           <div class="input-group input-group-lg">
+
+            <!-- search input box -->
             <input type="text" class="form-control" aria-label="Search">
+
+            <!-- search button -->
             <span class="input-group-btn">
-              <button class="btn" type="button">&nbsp;<i class="fa fa-search" aria-hidden="true"></i>&nbsp;</button>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchResults" aria-expanded="false" aria-controls="searchResults">&nbsp;<i class="fa fa-search" aria-hidden="true"></i>&nbsp;</button>
             </span>
+
           </div>
         </div>        
-      </div>            
-      
+      </div> <!-- //SEARCH BOX -->
 
-      <hr class="my-4">
-      <p class="lead">User Dashboard</p>
-      <div class="btn-toolbar" role="toolbar" aria-label="User Control Panel">
+      <!-- EXPANDABLE SEARCH RESULTS -->    
+      <div class="collapse" id="searchResults">
+        <div class="card card-body" id="searchResultsCard"> 
+          <h4>Search Results:</h4>
+          <hr class="mt-1 mb-3">
+
+          <!-- result #1 -->         
+          <div class="card">            
+            <div class="card-body itemCardBody">
+              <div class="row align-items-center">
+
+                <!-- item name space -->
+                <div class="col-sm-8">                                  
+                  <h4 class="card-title itemCardTitle">Green Beans</h4>
+                </div>
+
+                <!-- item button space -->
+                <div class="col-sm-4">                
+                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+                    <!-- button: add to favorites -->
+                    <button type="button" class="btn btn-primary">
+                      <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-heart" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- dropdown button: add to shopping list(s) -->
+                    <div class="btn-group" role="group">
+
+                      <!-- button -->
+                      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </button>
+
+                      <!-- dropdown list -->
+                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" href="#">Shopping List #1</a>
+                        <a class="dropdown-item" href="#">Shopping List #2</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div>
+
+          <!-- result #2 -->         
+          <div class="card">            
+            <div class="card-body itemCardBody">
+              <div class="row align-items-center">
+
+                <!-- item name space -->
+                <div class="col-sm-8">                                  
+                  <h4 class="card-title itemCardTitle">Dish Soap</h4>
+                </div>
+
+                <!-- item button space -->
+                <div class="col-sm-4">                
+                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+                    <!-- button: add to favorites -->
+                    <button type="button" class="btn btn-primary">
+                      <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-heart" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- dropdown button: add to shopping list(s) -->
+                    <div class="btn-group" role="group">
+
+                      <!-- button -->
+                      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </button>
+
+                      <!-- dropdown list -->
+                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" href="#">Shopping List #1</a>
+                        <a class="dropdown-item" href="#">Shopping List #2</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- //EXPANDABLE SEARCH RESULTS -->
+      
+<!--       <div class="btn-toolbar" role="toolbar" aria-label="User Control Panel">
         <div class="btn-group mr-2" role="group" aria-label="First group">
           <button type="button" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New Order</button>
         </div>
@@ -75,7 +167,7 @@
         <div class="btn-group" role="group" aria-label="Third group">
           <button type="button" class="btn btn-secondary">8</button>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- Accordion for shopping lists -->
@@ -88,7 +180,7 @@
         <div class="card-header" role="tab" id="favoritesHeader">
           <h5 class="mb-0">
             <a data-toggle="collapse" href="#favoritesCollapse" aria-expanded="true" aria-controls="favoritesCollapse">
-              <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;Favorites
+              <i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Favorites
             </a>
           </h5>
         </div>
@@ -96,7 +188,84 @@
         <!-- INSIDE COLLAPSABLE AREA -->
         <div id="favoritesCollapse" class="collapse show" role="tabpanel" aria-labelledby="favoritesHeader" data-parent="#accordion"> 
           <div class="card-body"> <!-- V V V favorites body V V V -->
-            
+            <!-- result #1 -->         
+            <div class="card">            
+              <div class="card-body itemCardBody">
+                <div class="row align-items-center">
+
+                  <!-- item name space -->
+                  <div class="col">                                  
+                    <h4 class="card-title itemCardTitle">Green Beans</h4>
+                  </div>
+
+                  <!-- item button space -->
+                  <div class="col-sm-4 justify-content-end">                
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">                      
+
+                      <!-- dropdown button: add to shopping list(s) -->
+                      <div class="btn-group" role="group">
+
+                        <!-- button -->
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </button>
+
+                        <!-- dropdown list -->
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                          <a class="dropdown-item" href="#">Shopping List #1</a>
+                          <a class="dropdown-item" href="#">Shopping List #2</a>
+                        </div>
+                      </div>
+
+                      <!-- button: remove from favorites -->
+                      <button type="button" class="btn btn-primary">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>                
+                </div>
+              </div>
+            </div>
+
+            <!-- result #2 -->         
+            <div class="card">            
+              <div class="card-body itemCardBody">
+                <div class="row align-items-center">
+
+                  <!-- item name space -->
+                  <div class="col-sm-8">                                  
+                    <h4 class="card-title itemCardTitle">Dish Soap</h4>
+                  </div>
+
+                  <!-- item button space -->
+                  <div class="col-sm-4">                
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                      
+                      <!-- dropdown button: add to shopping list(s) -->
+                      <div class="btn-group" role="group">
+
+                        <!-- button -->
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </button>
+
+                        <!-- dropdown list -->
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                          <a class="dropdown-item" href="#">Shopping List #1</a>
+                          <a class="dropdown-item" href="#">Shopping List #2</a>
+                        </div>
+                      </div>
+
+                      <!-- button: add to remove from favorites -->
+                      <button type="button" class="btn btn-primary">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+
+                    </div>
+                  </div>                
+                </div>
+              </div>
+            </div>
               
                 
                           
