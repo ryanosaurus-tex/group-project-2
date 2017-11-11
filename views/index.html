@@ -22,7 +22,7 @@
   <nav class="navbar sticky-top navbar-expand-lg">
     
     <!-- logo for app will go here -->
-    <a class="navbar-brand" href="index.html"><i class="fa fa-heartbeat fa-lg" aria-hidden="true" id="heartbeatIcon"></i>&nbsp;Marketplacer</a>
+    <a class="navbar-brand" href="index.html"><i class="fa fa-shopping-basket" aria-hidden="true" id="shoppingBasketIcon"></i>&nbsp;Grocer</a>
     
     <!-- set collapse toggler button for nav bar -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggle-collapse" aria-controls="nav-toggle-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,79 +46,99 @@
     </div>
   </nav>
   <div class="container">
-  <div class="jumbotron">
-    <h2 class="display-4">Welcome to Marketplacer</h2>
-    <p class="lead">Enter your information below to start exploring health and dental plans on the ACA healthcare exchanges nation-wide.</p>
-    <hr class="mt-2 mb-3 ">
-    
-    <form> <!--________user search form__________-->
-      <div class="form-row"> <!-- ROW 1 -->
 
-        <!-- input street address -->
-        <div class="form-group col-md-6">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Street Address">
-        </div>
+    <!-- Add a search/add new items card up here, always visible for quick access -->
+    <div class="jumbotron"> 
+      <div class="row">
+        <div class="col-sm-10 offset-sm-1">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" aria-label="Search">
+            <span class="input-group-btn">
+              <button class="btn" type="button">&nbsp;<i class="fa fa-search" aria-hidden="true"></i>&nbsp;</button>
+            </span>
+          </div>
+        </div>        
+      </div>            
+      
 
-        <!-- input city -->
-        <div class="form-group col-md-3">
-          <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity">
+      <hr class="my-4">
+      <p class="lead">User Dashboard</p>
+      <div class="btn-toolbar" role="toolbar" aria-label="User Control Panel">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+          <button type="button" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New Order</button>
         </div>
-
-        <!-- select state -->
-        <div class="form-group col-md-1">
-          <label for="inputState">State</label>
-          <select id="inputState" class="form-control">
-            <option value="" selected></option>
-            <option value="ak">AK</option><option value="al">AL</option><option value="ar">AR</option><option value="az">AZ</option><option value="ca">CA</option>
-            <option value="co">CO</option><option value="ct">CT</option><option value="dc">DC</option><option value="de">DE</option><option value="fl">FL</option>
-            <option value="ga">GA</option><option value="hi">HI</option><option value="ia">IA</option><option value="id">ID</option><option value="il">IL</option>
-            <option value="in">IN</option><option value="ks">KS</option><option value="ky">KY</option><option value="la">LA</option><option value="ma">MA</option>
-            <option value="md">MD</option><option value="me">ME</option><option value="mi">MI</option><option value="mn">MN</option><option value="mo">MO</option>
-            <option value="ms">MS</option><option value="mt">MT</option><option value="nc">NC</option><option value="nd">ND</option><option value="ne">NE</option>
-            <option value="nh">NH</option><option value="nj">NJ</option><option value="nm">NM</option><option value="nv">NV</option><option value="ny">NY</option>
-            <option value="oh">OH</option><option value="ok">OK</option><option value="or">OR</option><option value="pa">PA</option><option value="ri">RI</option>
-            <option value="sc">SC</option><option value="sd">SD</option><option value="tn">TN</option><option value="tx">TX</option><option value="ut">UT</option>
-            <option value="va">VA</option><option value="vt">VT</option><option value="wa">WA</option><option value="wi">WI</option><option value="wv">WV</option>
-            <option value="wy">WY</option>
-          </select>
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+          <button type="button" class="btn btn-secondary">5</button>
+          <button type="button" class="btn btn-secondary">6</button>
+          <button type="button" class="btn btn-secondary">7</button>
         </div>
-        <!-- input zip -->
-        <div class="form-group col-md-2">
-          <label for="inputZip">Zip</label>
-          <input type="text" class="form-control" id="inputZip">
-        </div>
-      </div> <!-- /ROW 1 -->
-    </form>
-
-    <hr class="mt-3 mb-3">
-
-    <form class="form-inline justify-content-end flex-nowrap" id="userVariablesForm"> 
-        <div class="form-group">
-          <label for="inputAge">Find plans for a</label>
-          <input type="text" class="form-control" id=inputAge aria-describedby="yearsOld">
-          <span id="yearsOld">year old</span>
-        </div>
-        
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="radioUserSex" id="inlineRadioM" value="male"> <span>M</span>
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="radioUserSex" id="inlineRadioF" value="female"> <span>F</span>
-          </label>
-        </div>
-    
-        <div class="col-auto">
-          <button type="submit" class="btn" id="searchButton">Search</button>
+        <div class="btn-group" role="group" aria-label="Third group">
+          <button type="button" class="btn btn-secondary">8</button>
         </div>
       </div>
-    </form>
-</div> <!-- /jumbotron -->
-</div> <!-- /container -->
+    </div>
+
+    <!-- Accordion for shopping lists -->
+    <!-- (favorites built in, others added dynamically when new shopping lists are created) -->
+    <div id="accordion" role="tablist">
+
+      
+      <div class="card"> <!-- favorites list -->
+        <!-- favorites header -->
+        <div class="card-header" role="tab" id="favoritesHeader">
+          <h5 class="mb-0">
+            <a data-toggle="collapse" href="#favoritesCollapse" aria-expanded="true" aria-controls="favoritesCollapse">
+              <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;Favorites
+            </a>
+          </h5>
+        </div>
+
+        <!-- INSIDE COLLAPSABLE AREA -->
+        <div id="favoritesCollapse" class="collapse show" role="tabpanel" aria-labelledby="favoritesHeader" data-parent="#accordion"> 
+          <div class="card-body"> <!-- V V V favorites body V V V -->
+            
+              
+                
+                          
+            
+          </div> <!-- /^ ^ ^ favorites body ^ ^ ^-->
+        </div> <!-- /CLOSE COLLAPSE -->        
+      </div> <!-- /favorites list -->
+
+      <!-- shopping list #1 -->
+      <div class="card">
+
+        <!-- shopping list #1 header -->
+        <div class="card-header" role="tab" id="headingTwo">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Shopping List #1
+            </a>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+
+          <!-- shopping list #1 body -->
+          <div class="card-body">
+            <div class="card userOrder">                 
+
+              <div class="card-body">
+                <h4 class="card-title">Order # 1</h4>
+                <h6 class="card-subtitle mb-2 text-muted">This is my weekly shopping order.</h6>                    
+              </div>
+            </div>
+
+          </div>
+              
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  
+  </div> <!-- /container -->
 
 
 
