@@ -72,3 +72,13 @@ body {
 #accordion {
 	margin-top: 1rem;
 	}
+
+/*------favorites styles------*/
+.btn-outline-secondary{
+	min-width: 28rem;	
+	text-align: left;
+}
+
+.favoriteItem {
+	margin-bottom: .5rem;
+}
