@@ -67,33 +67,8 @@ body {
 		text-decoration: none;	
 	}
 
-/*------jumbotron styles------*/
-.jumbotron {
+/*------accordion styles------*/
+
+#accordion {
 	margin-top: 1rem;
-	margin-bottom: 1rem;
-	background-color: #efefef;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-
-}
-
-	/*form styles*/
-	#inputAge {
-		width: 3rem;
-		margin-left: .35rem;
-		margin-right: .35rem;
 	}
-
-	#inlineRadioM {
-		margin-left: 1rem;
-	}
-
-	/*#userVariablesForm {
-		border: 5px solid red;
-
-	}*/
-
-	#searchButton {
-		background-color: #bdd4de;
-	}
-

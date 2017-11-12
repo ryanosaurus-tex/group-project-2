@@ -22,7 +22,7 @@
   <nav class="navbar sticky-top navbar-expand-lg">
     
     <!-- logo for app will go here -->
-    <a class="navbar-brand" href="index.html"><i class="fa fa-shopping-basket" aria-hidden="true" id="shoppingBasketIcon"></i>&nbsp;Grocer</a>
+    <a class="navbar-brand mb-0 h1" href="index.html"><span id="grubLogo">grub</span>List</a>
     
     <!-- set collapse toggler button for nav bar -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggle-collapse" aria-controls="nav-toggle-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,98 +46,120 @@
     </div>
   </nav>
   <div class="container">
-
-    <!-- Add a search/add new items card up here, always visible for quick access -->
-    <div class="jumbotron"> 
-      <div class="row">
-        <div class="col-sm-10 offset-sm-1">
-          <div class="input-group input-group-lg">
-            <input type="text" class="form-control" aria-label="Search">
-            <span class="input-group-btn">
-              <button class="btn" type="button">&nbsp;<i class="fa fa-search" aria-hidden="true"></i>&nbsp;</button>
-            </span>
-          </div>
-        </div>        
-      </div>            
-      
-
-      <hr class="my-4">
-      <p class="lead">User Dashboard</p>
-      <div class="btn-toolbar" role="toolbar" aria-label="User Control Panel">
-        <div class="btn-group mr-2" role="group" aria-label="First group">
-          <button type="button" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New Order</button>
-        </div>
-        <div class="btn-group mr-2" role="group" aria-label="Second group">
-          <button type="button" class="btn btn-secondary">5</button>
-          <button type="button" class="btn btn-secondary">6</button>
-          <button type="button" class="btn btn-secondary">7</button>
-        </div>
-        <div class="btn-group" role="group" aria-label="Third group">
-          <button type="button" class="btn btn-secondary">8</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Accordion for shopping lists -->
-    <!-- (favorites built in, others added dynamically when new shopping lists are created) -->
     <div id="accordion" role="tablist">
-
-      
-      <div class="card"> <!-- favorites list -->
-        <!-- favorites header -->
-        <div class="card-header" role="tab" id="favoritesHeader">
+      <div class="card">
+        <div class="card-header" role="tab" id="headingOne">
           <h5 class="mb-0">
-            <a data-toggle="collapse" href="#favoritesCollapse" aria-expanded="true" aria-controls="favoritesCollapse">
-              <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;Favorites
+            <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <i class="fa fa-user-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;User Name
             </a>
           </h5>
         </div>
+        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <!-- row-1 -->
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="btn-toolbar mt-2 mb-4" role="toolbar" aria-label="Toolbar with button groups">
 
-        <!-- INSIDE COLLAPSABLE AREA -->
-        <div id="favoritesCollapse" class="collapse show" role="tabpanel" aria-labelledby="favoritesHeader" data-parent="#accordion"> 
-          <div class="card-body"> <!-- V V V favorites body V V V -->
-            
+                  <!--====CREATE NEW LIST=================================================================-->
+                  <div class="input-group input-group-lg mr-4">
+
+                    <!-- create new list [[BUTTON]] -->
+                    <span class="input-group-btn">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;<i class="fa fa-file-text fa-lg" aria-hidden="true"></i>
+                      </button>
+                    </span>
+
+                    <!-- create new list [INPUT___________] -->
+                    <input type="text" class="form-control" placeholder="Create a new list" aria-label="create a new list" aria-describedby="btnGroupAddon">
+                  </div>
+                  <!--===/CREATE NEW LIST=================================================================-->
+
+                  <!--====LISTS & CART BUTTONS============================================================-->
+                  <div class="btn-group btn-group-lg" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-secondary">
+                      <i class="fa fa-file-text fa-lg" aria-hidden="true"></i>&nbsp;Lists
+                    </button>                   
+                    <button type="button" class="btn btn-secondary">
+                      <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>&nbsp;Cart
+                    </button>
+                  </div>
+                  <!--===/LISTS & CART BUTTONS============================================================-->
+                  
+                </div>
+              </div>
+
               
-                
-                          
-            
-          </div> <!-- /^ ^ ^ favorites body ^ ^ ^-->
-        </div> <!-- /CLOSE COLLAPSE -->        
-      </div> <!-- /favorites list -->
-
-      <!-- shopping list #1 -->
+            </div>
+            <!-- /row-1 -->
+            <!-- row-2 -->
+            <div class="row justify-content-center">
+              <div class="col-sm-12">
+                <div class="input-group input-group-lg">                
+                  <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">
+                      <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                    </button>
+                  </span>                
+                </div>
+              </div>
+            </div> 
+            <!-- //row-2 -->
+          </div>
+        </div>
+      </div>
       <div class="card">
-
-        <!-- shopping list #1 header -->
         <div class="card-header" role="tab" id="headingTwo">
           <h5 class="mb-0">
             <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Shopping List #1
+              <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;Favorites
             </a>
           </h5>
         </div>
         <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-
-          <!-- shopping list #1 body -->
           <div class="card-body">
-            <div class="card userOrder">                 
+            
+            <!--===FAVORITE ITEM EXAMPLE=================================================================-->
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-outline-secondary">Product Name 1</button>              
 
-              <div class="card-body">
-                <h4 class="card-title">Order # 1</h4>
-                <h6 class="card-subtitle mb-2 text-muted">This is my weekly shopping order.</h6>                    
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-share" aria-hidden="true"></i><i class="fa fa-file-text" aria-hidden="true"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#">User Shopping List #1</a>
+                  <a class="dropdown-item" href="#">User Shopping List #2</a>
+                </div>
               </div>
-            </div>
 
-          </div>
-              
-              </div>              
+              <button type="button" class="btn btn-danger"><i class="fa fa-window-close fa-lg" aria-hidden="true"></i></button>
             </div>
+            <!--==/FAVORITE ITEM EXAMPLE=================================================================-->
+
           </div>
         </div>
       </div>
-      
+      <div class="card">
+        <div class="card-header" role="tab" id="headingThree">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;User Shopping List #1
+            </a>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
     </div>
-  
+
+    
   </div> <!-- /container -->
 
 
