@@ -1,6 +1,6 @@
 USE groceries_db;
 
-INSERT INTO grocery_users (user_name, user_email, shoppinglist_id)
+INSERT INTO grocery_users (user_name, user_email, shopping_group_id)
 	VALUES ('David','david.staas@outlook.com',1);
 
 INSERT INTO shopping_groups (group_name) 
@@ -8,20 +8,20 @@ INSERT INTO shopping_groups (group_name)
 
 INSERT INTO shopping_carts (shopping_group_id, cart_name) VALUES (1, "Tom Thumb");
 
-INSERT INTO categories (category_name) 
-	VALUES ('Condiments');
-INSERT INTO categories (category_name) 
-	VALUES ('Cleaning Supplies');
-INSERT INTO categories (category_name) 
-	VALUES ('Coffee/Tea');
-INSERT INTO categories (category_name) 
-	VALUES ('Breads');
-INSERT INTO categories (category_name) 
-	VALUES ('Spices');
-INSERT INTO categories (category_name) 
-	VALUES ('Pasta');
-INSERT INTO categories (category_name) 
-	VALUES ('Produce');
+INSERT INTO categories (category_name, shopping_group_id) 
+	VALUES ('Condiments', 1);
+INSERT INTO categories (category_name, shopping_group_id) 
+	VALUES ('Cleaning Supplies', 1);
+INSERT INTO categories (category_name, shopping_group_id) 
+	VALUES ('Coffee/Tea', 1);
+INSERT INTO categories (category_name, shopping_group_id) 
+	VALUES ('Breads', 1);
+INSERT INTO categories (category_name, shopping_group_id) 
+	VALUES ('Spices', 1);
+INSERT INTO categories (category_name, shopping_group_id) 
+	VALUES ('Pasta', 1);
+INSERT INTO categories (category_name, shopping_group_id) 
+	VALUES ('Produce', 1);
 
 
 -- Add more here once the data's all loaded
