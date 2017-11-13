@@ -1,13 +1,31 @@
-var ormShoppingListItems = require("../config/orm_shoppinglist_items.js");
+var ormShoppingGroups = require("../config/orm_shopping_groups.js");
 
-var shoppinglist_items = {
-  selectAll: function(cartId, cb) {
-    ormShoppingListItems.selectAll(cartId, function(res) {
-      cb(res);
-    });
-  }
+var shopping_groups = {
+
+	selectAll: function(cb) {
+		ormShoppingGroups.selectAll(function(res) {
+			cb(res);
+		});
+	},
+
+	insertOne: function(cols, vals, cb) {
+		ormShoppingGroups.insertOne(cols, vals, function(res) {
+			cb(res);
+		});
+	},
+
+	updateOne: function(objColVals, condition, cb) {
+		ormShoppingGroups.updateOne(objColVals, condition, function(res) {
+			cb(res);
+		});
+	},
+	
+	deleteOne: function(condition, cb) {
+		ormShoppingGroups.deleteOne(condition, function(res) {
+			cb(res);
+		});
+	}    
 };
 
 // Export the database functions for the controller
-module.exports = shoppinglist_items;
-	
+module.exports = shopping_groups;

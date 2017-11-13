@@ -1,5 +1,5 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
@@ -26,7 +26,8 @@ function objToSql(ob) {
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
       // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
-      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+      // if (typeof value === "string" && value.indexOf(" ") >= 0) {
+      if (typeof value === "string") {
         value = "'" + value + "'";
       }
       // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
@@ -34,68 +35,71 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
-
   // translate array of strings to a single comma-separated string
   return arr.toString();
 }
 
 // Object for all our SQL statement functions.
-var orm = {
-    shoppingListItems: function(cartId, cb) {
-        var queryString = "SELECT id, product_name, category_name, comments, in_cart "
-        queryString += "FROM shoppinglist_items WHERE shopping_cart_id = " + cartId + ";"
+var ormShoppingGroups = {
+    
+    selectAll: function(cb) {
+        var queryString = "SELECT * FROM shopping_groups";
+
+        console.log(queryString);
 
         connection.query(queryString, function(err, result) {
-        
-        if (err) {
-            throw err;
-        }
-        cb(result);
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    },
+
+    insertOne: function(cols, vals, cb) {
+
+        var queryString = "INSERT INTO shopping_groups ";
+        queryString += " (" + cols.toString() + ") ";
+        // queryString += "VALUES (" + vals + ");";
+        queryString += "VALUES (" + printQuestionMarks(vals.length) + ") ";
+
+        connection.query(queryString, vals, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    },
+
+    updateOne: function(objColVals, condition, cb) {
+
+        var queryString = "UPDATE shopping_groups ";
+
+        queryString += "SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    },
+
+    deleteOne: function(condition, cb) {
+
+        var queryString = "DELETE FROM shopping_groups ";
+        queryString += " WHERE ";
+        queryString += condition;
+
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
         });
     }
 };
 
-module.exports = orm;
-
-//   create: function(table, cols, vals, cb) {
-//     var queryString = "INSERT INTO " + table;
-
-//     queryString += " (";
-//     queryString += cols.toString();
-//     queryString += ") ";
-//     queryString += "VALUES (";
-//     queryString += printQuestionMarks(vals.length);
-//     queryString += ") ";
-
-//     console.log(queryString);
-
-//     connection.query(queryString, vals, function(err, result) {
-//       if (err) {
-//         throw err;
-//       }
-
-//       cb(result);
-//     });
-//   },
-//   // An example of objColVals would be {name: panther, sleepy: true}
-//   update: function(table, objColVals, condition, cb) {
-//     var queryString = "UPDATE " + table;
-
-//     queryString += " SET ";
-//     queryString += objToSql(objColVals);
-//     queryString += " WHERE ";
-//     queryString += condition;
-
-//     console.log(queryString);
-//     connection.query(queryString, function(err, result) {
-//       if (err) {
-//         throw err;
-//       }
-
-//       cb(result);
-//     });
-//   }
-// };
-
-// Export the orm object for the model (cat.js).
-// module.exports = orm;
+module.exports = ormShoppingGroups;

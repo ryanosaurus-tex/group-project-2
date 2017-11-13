@@ -1,13 +1,32 @@
-var ormShoppingListItems = require("../config/orm_shoppinglist_items.js");
+var ormGroceryUsers = require("../config/orm_grocery_users.js");
 
-var shoppinglist_items = {
-  selectAll: function(cartId, cb) {
-    ormShoppingListItems.selectAll(cartId, function(res) {
+var grocery_users = {
+
+  selectAll: function(groupId, cb) {
+    console.log ("mod 6: " + groupId);
+    ormGroceryUsers.selectAll(groupId, function(res) {
       cb(res);
     });
-  }
+  },
+
+  insertOne: function(cols, vals, cb) {
+    ormGroceryUsers.insertOne(cols, vals, function(res) {
+      cb(res);
+    });
+  },
+
+  updateOne: function(objColVals, condition, cb) {
+    ormGroceryUsers.updateOne(objColVals, condition, function(res) {
+      cb(res);
+    });
+  },
+  
+  deleteOne: function(condition, cb) {
+    ormGroceryUsers.deleteOne(condition, function(res) {
+      cb(res);
+    });
+  }    
 };
 
 // Export the database functions for the controller
-module.exports = shoppinglist_items;
-	
+module.exports = grocery_users;

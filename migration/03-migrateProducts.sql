@@ -236,3 +236,45 @@ FROM
     products_base_17 as P
     inner join brands as B
     on P.brand = B.brand_name;
+insert into products (
+    product_name,
+    upc14,
+    upc12,
+    brand_id )
+select 
+    P.name,
+    P.upc14,
+    P.upc12,
+    B.id
+FROM
+    products_base_18 as P
+    inner join brands as B
+    on P.brand = B.brand_name;
+insert into products (
+    product_name,
+    upc14,
+    upc12,
+    brand_id )
+select 
+    P.name,
+    P.upc14,
+    P.upc12,
+    B.id
+FROM
+    products_base_19 as P
+    inner join brands as B
+    on P.brand = B.brand_name;
+insert into products (
+    product_name,
+    upc14,
+    upc12,
+    brand_id )
+select 
+    P.name,
+    P.upc14,
+    P.upc12,
+    B.id
+FROM
+    products_base_20 as P
+    inner join brands as B
+    on P.brand = B.brand_name;
