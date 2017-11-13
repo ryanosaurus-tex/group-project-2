@@ -13,15 +13,15 @@ var router8 = express.Router();
 var brands = require('../models/brands.js');
   // brand_name, manufacturer_name, full_address, website
 var categories = require('../models/categories.js');
-  // catergory_name
+  // catergory_name, shopping_group_id
 var grocery_users = require('../models/grocery_users.js');
-  // user_name, user_email, shoppinglist_id
+  // user_name, user_email, shopping_group_id
 var list_favorites = require('../models/list_favorites.js');
   // shopping_group_id, product_name, product_id, brand_name, brand_id, category_name, category_id, comments
 var products = require('../models/products.js');
   // product_name, upc14, upc12
 var shopping_carts = require('../models/shopping_carts');
-  // shopping_group_id, cart_name
+  // shopping_group_id, cart_name, date_opened, date_closed
 var shopping_groups = require('../models/shopping_groups.js');
   // group_name
 var shoppinglist_items = require('../models/shoppinglist_items.js');
@@ -96,7 +96,7 @@ router2.get('/all/categories', function(req, res) {
 
 router2.post('/insert/categories', function(req, res) {
   categories.insertOne([
-    'category_name'
+    'category_name', 'shopping_group_id'
   ], [
     req.body.categories
   ], function(data) {
@@ -150,7 +150,7 @@ router3.get('/all/grocery_users', function(req, res) {
 
 router3.post('/insert/grocery_users', function(req, res) {
   grocery_users.insertOne([
-    'user_name', 'user_email', 'shoppinglist_id' 
+    'user_name', 'user_email', 'shopping_group_id' 
   ], [
     req.body.grocery_users
   ], function(data) {
