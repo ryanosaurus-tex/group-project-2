@@ -5,8 +5,11 @@
 // Dependencies
 // =============================================================
 var express = require("express");
-var methodOverride = require("method-override");
+//var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
+var ua = require('universal-analytics');
+var visitor = ua('UA-109501568-1');
+visitor.pageview(window.location.href).send();
 
 
 // Sets up the Express App
@@ -22,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Override with POST having ?_method=DELETE
 // =============================================================
-app.use(methodOverride('_method'));
+//app.use(methodOverride('_method'));
 
 // Set Handlebars as the view engine
 // =============================================================
@@ -35,7 +38,7 @@ app.set('view engine', 'handlebars');
 // =============================================================
 var routes = require('./controllers/shopController.js');
 
-app.use('/', routes);
+app.use('/', routes, visitor);
 
 // Starts the server to begin listening
 // =============================================================
