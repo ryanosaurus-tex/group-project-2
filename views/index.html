@@ -47,74 +47,123 @@
   </nav>
   <div class="container">
     <div id="accordion" role="tablist">
-      <div class="card">
-        <div class="card-header" role="tab" id="headingDash">
+
+      <!-- *********** USER DASHBOARD ***************************************************************************************** -->
+      <div class="card" id="dashboardCard">
+
+        <!--====User dashboard HEADER=====================================================-->
+        <div class="card-header" role="tab" id="dashboardHeader">
           <h5 class="mb-0">
-            <a class="collapsed accordionHeadLink" data-toggle="collapse" href="#collapseDash" aria-expanded="true" aria-controls="collapseDash">
+            <a class="collapsed card-headerLink" data-toggle="collapse" href="#collapseDash" aria-expanded="true" aria-controls="collapseDash">
               <i class="fa fa-user-o fa-lg mr-2" aria-hidden="true"></i>User Name
             </a>
           </h5>
         </div>
-        <div id="collapseDash" class="collapse show" role="tabpanel" aria-labelledby="headingDash" data-parent="#accordion">
+
+        <!-- *********** USER DASHBOARD || DROP-DOWN || ************************************************************************* -->
+        <div id="collapseDash" class="collapse show" role="tabpanel" aria-labelledby="dashboardHeader" data-parent="#accordion">
           <div class="card-body">
-            <!-- row-1 -->
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="btn-toolbar mt-2 mb-4" role="toolbar" aria-label="Toolbar with button groups">
-
-                  <!--====CREATE NEW LIST=================================================================-->
-                  <div class="input-group input-group-lg mr-4">
-
-                    <!-- create new list [[BUTTON]] -->
-                    <span class="input-group-btn">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fa fa-plus mr-2" aria-hidden="true"></i><i class="fa fa-file-text fa-lg" aria-hidden="true"></i>
-                      </button>
-                    </span>
-
-                    <!-- create new list [INPUT___________] -->
-                    <input type="text" class="form-control" placeholder="Create a new list" aria-label="create a new list" aria-describedby="btnGroupAddon">
-                  </div>
-                  <!--===/CREATE NEW LIST=================================================================-->
-
-                  <!--====LISTS & CART BUTTONS============================================================-->
-                  <div class="btn-group btn-group-lg" role="group" aria-label="First group">
-                    <button type="button" class="btn btn-secondary">
-                      <i class="fa fa-file-text fa-lg mr-2" aria-hidden="true"></i>Lists
-                    </button>                   
-                    <button type="button" class="btn btn-secondary">
-                      <i class="fa fa-shopping-cart fa-lg mr-2" aria-hidden="true"></i>Cart
-                    </button>
-                  </div>
-                  <!--===/LISTS & CART BUTTONS============================================================-->
-                  
-                </div>
-              </div>
-
-              
-            </div>
-            <!-- /row-1 -->
-            <!-- row-2 -->
-            <div class="row justify-content-center">
+            <h1 class="display-4">Search Products</h1>
+            <hr class="mt-1">
+            <!-- .............................................ROW-1 [_________________][search box]....................... -->            
+            <div class="row justify-content-center mt-4 mb-5 px-2">
               <div class="col-sm-12">
                 <div class="input-group input-group-lg">                
-                  <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                  <input type="text" class="form-control" aria-label="Search">
                   <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button">
-                      <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                    <button class="btn btn-danger" type="button">
+                      <i class="fa fa-search fa-lg mr-2" aria-hidden="true"></i>Search
                     </button>
                   </span>                
                 </div>
               </div>
-            </div> 
-            <!-- //row-2 -->
-          </div>
+            </div> <!-- ...................................../ROW-1...................................................... -->
+            <hr>
+
+            <div class="row px-2"> <!-- ......................ROW-2 [+ List][_____________]  [ Lists ]................... -->
+
+              <!--====CREATE NEW LIST=====================================================-->
+              <div class="col-sm-9">                  
+                <div class="input-group input-group-lg mr-4">
+
+                  <!-- create new list BUTTON [+ List] -->
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">
+                      <i class="fa fa-plus fa-fw" aria-hidden="true"></i><i class="fa fa-file-text fa-lg fa-fw " aria-hidden="true"></i>
+                    </button>
+                  </span>
+
+                  <!-- create new list INPUT [_Create a new list_______________] -->
+                  <input type="text" class="form-control" placeholder="Create a new list" aria-label="create a new list" aria-describedby="btnGroupAddon">
+
+                </div>                  
+              </div>              
+
+              <!--====LISTS BUTTON (view lists)============================================-->
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-secondary btn-lg btn-block">
+                  <i class="fa fa-file-text fa-fw fa-lg mr-2" aria-hidden="true"></i><i class="fa fa-folder-open fa-lg fa-fw" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div> <!-- ............................................/ROW-2 .............................................. -->
+
+            <div class="row mt-2 mb-4 px-2"> <!-- ......................ROW-3 [+ Order][_____________]  [ Orders ]................. -->
+              
+              <!--====CREATE NEW ORDER====================================================-->
+              <div class="col-sm-9">                
+                <div class="input-group input-group-lg mr-4">
+
+                  <!-- create new order BUTTON [+ Order] -->
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary orangify" type="button">
+                      <i class="fa fa-plus fa-fw" aria-hidden="true"></i><i class="fa fa-cubes fa-lg fa-fw" aria-hidden="true"></i>
+                    </button>
+                  </span>
+
+                  <!-- create new order INPUT [_Create a new list______________] -->
+                  <input type="text" class="form-control orangify-border" placeholder="Create a new order" aria-label="create a new order" aria-describedby="btnGroupAddon">
+                </div>                
+              </div>              
+
+              <!--====ORDERS BUTTON (view orders)==================================================-->              
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-secondary btn-lg btn-block light-orangify">
+                  <i class="fa fa-cubes fa-lg fa-fw mr-2" aria-hidden="true"></i><i class="fa fa-folder-open fa-lg fa-fw" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div> <!-- ......................................./ROW-3............................................. -->
+
+            <!--
+
+            <div class="row my-4 justify-content-center">  ..ROW-4.......[cart][middle][right].................                
+            <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+
+              <button type="button" class="btn btn-primary">
+                <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Left
+              </button> 
+
+              <button type="button" class="btn btn-primary">
+                <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Middle
+              </button>
+
+              <button type="button" class="btn btn-primary">
+                <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Right
+              </button>
+                
+            </div>                           
+            </div>   ......................................./ROW-4............................................   
+
+            -->
+
+
+          </div> <!-- /.card-body -->
         </div>
+        <!-- ********** /USER DASHBOARD || DROP-DOWN || ************************************************************************* -->
       </div>
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
           <h5 class="mb-0">
-            <a class="collapsed accordionHeadLink" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <a class="collapsed card-headerLink" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               <i class="fa fa-heart-o fa-lg mr-2" aria-hidden="true"></i>Favorites
             </a>
           </h5>
@@ -220,7 +269,7 @@
       <div class="card">
         <div class="card-header" role="tab" id="headingThree">
           <h5 class="mb-0">
-            <a class="collapsed accordionHeadLink" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <a class="collapsed card-headerLink" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               <i class="fa fa-file-text-o fa-lg mr-2" aria-hidden="true"></i>User Shopping List #1
             </a>
           </h5>

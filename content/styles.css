@@ -90,7 +90,7 @@ body {
 }
 
 .btn-secondary:hover {
-	background-color: #B4F5E5;
+	background-color: #A5E0D2;
 	border-color: #5BCCC1;
 }
 
@@ -125,22 +125,22 @@ body {
 }
 
 	/*accordion logo link*/
-	a.accordionHeadLink:link {
+	a.card-headerLink:link {
 		color: #F0F0F2;
 		text-decoration: none;	
 	}
 
-	a.accordionHeadLink:visited {
+	a.card-headerLink:visited {
 		color: #F0F0F2;
 		text-decoration: none;	
 	}
 
-	a.accordionHeadLink:hover {
+	a.card-headerLink:hover {
 		color: #E8476D;
 		text-decoration: none;	
 	}
 
-	a.accordionHeadLink:active {
+	a.card-headerLink:active {
 		color: #E8476D;
 		text-decoration: none;	
 	}
@@ -150,5 +150,44 @@ body {
 	text-align: left;
 }
 
+/*-----.orangify-----*/
+.orangify {
+	background-color: #E37337;
+	border-color: #9C4F26;
+}
 
+.orangify:hover {
+	background-color: #F7935E;
+	border-color: #E37337;
+}
 
+.orangify-border {	
+	border-color: #9C4F26;		
+}
+
+.orangify-border:hover {	
+	border-color: #9C4F26;		
+}
+
+/*-----.light-orangify-----*/
+.light-orangify {
+	background-color: #E08F64;
+	border-color: #9C4F26;
+}
+
+.light-orangify:hover {
+	background-color: #FFBF9C;
+	border-color: #E37337;
+}
+
+.light-orangify-border {	
+	border-color: #9C4F26;		
+}
+
+.light-orangify-border:hover {	
+	border-color: #E37337;		
+}
+
+h1 {
+	color: #3B2B39;
+}
