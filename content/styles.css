@@ -12,6 +12,7 @@ body {
 	}
 }
 
+
 /*------navbar styles------*/
 .navbar {
 	background-color: #2A3638;
@@ -100,6 +101,23 @@ body {
 	text-align: left;
 }
 
+<<<<<<< HEAD
 .favoriteItem {
 	margin-bottom: .5rem;
+=======
+
+/*------item card styles------*/
+.itemCardBody {
+	padding: .5rem;	
+	background-color: #bdd4de;
+
+}
+
+.itemCardTitle {
+	margin-bottom: 0;
+}
+
+#searchResultsCard {
+	margin-top: 1rem;
+>>>>>>> 4b4223d49109f2c745ff02cf60a87390c278badd
 }
