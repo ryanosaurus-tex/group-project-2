@@ -1,5 +1,5 @@
 body {
-	background-color: #3f5765;
+	background-color: #3F4D52;
 }
 
 .container {
@@ -14,7 +14,7 @@ body {
 
 /*------navbar styles------*/
 .navbar {
-	background-color: #2b3a42;
+	background-color: #2A3638;
 }
 	/*nav links*/
 	a.nav-link:link {
@@ -72,6 +72,27 @@ body {
 #accordion {
 	margin-top: 1rem;
 	}
+.card {
+	border-color: #768A99;
+}
+
+.card-header {
+	background-color: #C2C0BC;
+	border: none; 
+}
+
+.card-body {
+	background-color: #EBEBEB;
+	
+}
+
+.btn-primary {
+	background-color: #AC6C82;
+}
+
+.btn-secondary {
+	background-color: #685C79;
+}
 
 /*------favorites styles------*/
 .btn-outline-secondary{
