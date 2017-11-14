@@ -1,5 +1,5 @@
 body {
-	background-color: #3F4D52;
+	background-color: #261C25; 
 }
 
 .container {
@@ -15,32 +15,32 @@ body {
 
 /*------navbar styles------*/
 .navbar {
-	background-color: #2A3638;
+	background-color: #3B2B39;
 }
 	/*nav links*/
 	a.nav-link:link {
-		color: #efefef;
+		color: #F0F0F2;
 		text-decoration: none;	
 	}
 
 	a.nav-link:visited {
-		color: #efefef;
+		color: #F0F0F2;
 		text-decoration: none;	
 	}
 
 	a.nav-link:hover {
-		color: #ff530d;
+		color: #E8476D;
 		text-decoration: none;	
 	}
 
 	a.nav-link:active {
-		color: #efefef;
+		color: #E8476D;
 		text-decoration: none;	
 	}
 
 /*navbar collapse button (bars icon) */
 #collapseButton {
-	color: #efefef;
+	color: #F0F0F2;
 }
 
 /*navbar logo */
@@ -49,22 +49,22 @@ body {
 }
 	/*navbar logo link*/
 	a.navbar-brand:link {
-		color: #efefef;
+		color: #F0F0F2;
 		text-decoration: none;	
 	}
 
 	a.navbar-brand:visited {
-		color: #efefef;
+		color: #F0F0F2;
 		text-decoration: none;	
 	}
 
 	a.navbar-brand:hover {
-		color: #ff530d;
+		color: #E8476D;
 		text-decoration: none;	
 	}
 
 	a.navbar-brand:active {
-		color: #efefef;
+		color: #E8476D;
 		text-decoration: none;	
 	}
 
@@ -73,51 +73,82 @@ body {
 #accordion {
 	margin-top: 1rem;
 	}
-.card {
-	border-color: #768A99;
-}
-
-.card-header {
-	background-color: #C2C0BC;
-	border: none; 
-}
-
-.card-body {
-	background-color: #EBEBEB;
-	
-}
 
 .btn-primary {
-	background-color: #AC6C82;
+	background-color: #449991;
+	border-color: #2A5E59;
+}
+
+.btn-primary:hover {
+	background-color: #5BCCC1;
+	border-color: #449991;
 }
 
 .btn-secondary {
-	background-color: #685C79;
+	background-color: #8CBEB2;
+	border-color: #449991;
 }
 
+.btn-secondary:hover {
+	background-color: #B4F5E5;
+	border-color: #5BCCC1;
+}
+
+.btn-danger {
+	background-color: #E8476D;
+	border-color: #573544;
+}
+
+.btn-danger:hover {
+	background-color: #FF6E90;
+	border-color: #573544;
+}
+
+.btn-outline-secondary:disabled {
+	background-color: #F0F0F2;
+	border-color: #449991;
+	color: #449991;
+	opacity: 1;
+}
+
+.form-control {
+	border: 1px solid #2A5E59;
+}
+
+.card-header {
+	background-color: #644D52; 
+}
+
+.card {
+	border-color: #F2EBDE;
+	background-color: #F2EBDE;
+}
+
+	/*accordion logo link*/
+	a.accordionHeadLink:link {
+		color: #F0F0F2;
+		text-decoration: none;	
+	}
+
+	a.accordionHeadLink:visited {
+		color: #F0F0F2;
+		text-decoration: none;	
+	}
+
+	a.accordionHeadLink:hover {
+		color: #E8476D;
+		text-decoration: none;	
+	}
+
+	a.accordionHeadLink:active {
+		color: #E8476D;
+		text-decoration: none;	
+	}
 /*------favorites styles------*/
 .btn-outline-secondary{
 	min-width: 28rem;	
 	text-align: left;
 }
 
-<<<<<<< HEAD
-.favoriteItem {
-	margin-bottom: .5rem;
-=======
 
-/*------item card styles------*/
-.itemCardBody {
-	padding: .5rem;	
-	background-color: #bdd4de;
 
-}
-
-.itemCardTitle {
-	margin-bottom: 0;
-}
-
-#searchResultsCard {
-	margin-top: 1rem;
->>>>>>> 4b4223d49109f2c745ff02cf60a87390c278badd
-}
