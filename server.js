@@ -8,7 +8,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var ua = require('universal-analytics');
 var visitor = ua('UA-109501568-1');
-visitor.pageview(window.location.href).send();
+visitor.pageview().send();
 
 
 // Sets up the Express App
