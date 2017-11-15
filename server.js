@@ -38,7 +38,7 @@ app.set('view engine', 'handlebars');
 // =============================================================
 var routes = require('./controllers/shopController.js');
 
-app.use('/', routes, visitor);
+app.use('/', routes);
 
 // Starts the server to begin listening
 // =============================================================

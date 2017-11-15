@@ -1,13 +1,6 @@
 // Pull in required dependencies
 var express = require('express');
-var router1 = express.Router();
-var router2 = express.Router();
-var router3 = express.Router();
-var router4 = express.Router();
-var router5 = express.Router();
-var router6 = express.Router();
-var router7 = express.Router();
-var router8 = express.Router();
+var router = express.Router();
 
 // Import the shopping model js files (brands, categories, grocery_users, products, shopping_cart, shopping_group, shoppinglist_items) to use its database functions.
 var brands = require('../models/brands.js');
@@ -28,21 +21,23 @@ var shoppinglist_items = require('../models/shoppinglist_items.js');
   // shopping_cart_id, product_name, product_id, category_id, brand_id, brand_name, comments, in_cart
 
 //**********************************************
+
 // Create the brands routes and associated logic
+
 //**********************************************
-module.exports = (router1, visitor) {
-router1.get('/all/brands', function(req, res) {
+
+router.get('/all/brands', function(req, res) {
   brands.selectAll(function(data) {
     var hbsObject1 = {
       brands: data
     };
     // console.log(hbsObject);
-    res.render('index', hbsObject1);
+    res.json('index', hbsObject1);
     visitor.pageview('/all/brands').send();
   });
 });
 
-router1.post('/insert/brands', function(req, res) {
+router.post('/insert/brands', function(req, res) {
   brands.insertOne([
     'brand_name', 'manufacturer_name', 'full_address', 'website'
   ], [
@@ -53,7 +48,7 @@ router1.post('/insert/brands', function(req, res) {
   });
 });
 
-router1.put('/update/brands/:id', function(req, res) {
+router.put('/update/brands/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   brands.updateOne({
@@ -69,7 +64,7 @@ router1.put('/update/brands/:id', function(req, res) {
   });
 });
 
-router1.delete('/delete/brands/:id', function(req, res) {
+router.delete('/delete/brands/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   brands.deleteOne({
@@ -84,24 +79,27 @@ router1.delete('/delete/brands/:id', function(req, res) {
     }
   });
 });
-};
+
 
 //**************************************************
+
 // Create the categories routes and associated logic
+
 //**************************************************
 module.exports = (router2, visitor) {
-router2.get('/all/categories', function(req, res) {
-  categories.selectAll(function(data) {
+router.get('/all/categories/:id', function(req, res) {
+  var group_id = req.params.id;
+  categories.selectAll(group_id, function(data) {
     var hbsObject2 = {
       categories: data
     };
     // console.log(hbsObject);
-    res.render('index', hbsObject2);
+    res.json('index', hbsObject2);
     visitor.pageview('/all/categories').send();
   });
 });
 
-router2.post('/insert/categories', function(req, res) {
+router.post('/insert/categories', function(req, res) {
   categories.insertOne([
     'category_name', 'shopping_group_id'
   ], [
@@ -112,7 +110,7 @@ router2.post('/insert/categories', function(req, res) {
   });
 });
 
-router2.put('/update/categories/:id', function(req, res) {
+router.put('/update/categories/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   categories.updateOne({
@@ -128,7 +126,7 @@ router2.put('/update/categories/:id', function(req, res) {
   });
 });
 
-router2.delete('/delete/categories/:id', function(req, res) {
+router.delete('/delete/categories/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   categories.deleteOne({
@@ -146,21 +144,23 @@ router2.delete('/delete/categories/:id', function(req, res) {
 };
 
 //*****************************************************
+
 // Create the grocery users routes and associated logic
+
 //*****************************************************
-module.exports = (router3, visitor) {
-router3.get('/all/grocery_users', function(req, res) {
+
+router.get('/all/grocery_users', function(req, res) {
   grocery_users.selectAll(function(data) {
     var hbsObject3 = {
       grocery_users: data
     };
     // console.log(hbsObject);
-    res.render('index', hbsObject3);
+    res.json('index', hbsObject3);
     visitor.pageview('/all/grocery_users').send();
   });
 });
 
-router3.post('/insert/grocery_users', function(req, res) {
+router.post('/insert/grocery_users', function(req, res) {
   grocery_users.insertOne([
     'user_name', 'user_email', 'shopping_group_id' 
   ], [
@@ -171,7 +171,7 @@ router3.post('/insert/grocery_users', function(req, res) {
   });
 });
 
-router3.put('/update/grocery_users/:id', function(req, res) {
+router.put('/update/grocery_users/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   grocery_users.updateOne({
@@ -187,7 +187,7 @@ router3.put('/update/grocery_users/:id', function(req, res) {
   });
 });
 
-router3.delete('/delete/grocery_users/:id', function(req, res) {
+router.delete('/delete/grocery_users/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   grocery_users.deleteOne({
@@ -202,24 +202,26 @@ router3.delete('/delete/grocery_users/:id', function(req, res) {
     }
   });
 });
-};
+
 
 //************************************************
+
 // Create the products routes and associated logic
+
 //************************************************
-module.exports = (router4, visitor) {
-router4.get('/all/products', function(req, res) {
+
+router.get('/all/products', function(req, res) {
   products.selectAll(function(data) {
     var hbsObject4 = {
       products: data
     };
     // console.log(hbsObject);
-    res.render('index', hbsObject4);
+    res.json('index', hbsObject4);
     visitor.pageview('/all/products').send();
   });
 });
 
-router4.post('/insert/products', function(req, res) {
+router.post('/insert/products', function(req, res) {
   products.insertOne([
     'product_name', 'upc14', 'upc12', 'brand_id'
   ], [
@@ -230,7 +232,7 @@ router4.post('/insert/products', function(req, res) {
   });
 });
 
-router4.put('/update/products/:id', function(req, res) {
+router.put('/update/products/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   products.updateOne({
@@ -246,7 +248,7 @@ router4.put('/update/products/:id', function(req, res) {
   });
 });
 
-router4.delete('/delete/products/:id', function(req, res) {
+router.delete('/delete/products/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   products.deleteOne({
@@ -261,24 +263,26 @@ router4.delete('/delete/products/:id', function(req, res) {
     }
   });
 });
-};
+
 
 //******************************************************
+
 // Create the shopping carts routes and associated logic
+
 //******************************************************
-module.exports = (router5, visitor) {
-router5.get('/all/shopping_carts', function(req, res) {
+
+router.get('/all/shopping_carts', function(req, res) {
   shopping_carts.selectAll(function(data) {
     var hbsObject5 = {
       shopping_carts: data
     };
     // console.log(hbsObject);
-    res.render('index', hbsObject5);
+    res.json('index', hbsObject5);
     visitor.pageview('/all/shopping_carts').send();
   });
 });
 
-router5.post('/insert/shopping_carts', function(req, res) {
+router.post('/insert/shopping_carts', function(req, res) {
   shopping_carts.insertOne([
     'shopping_group_id', 'cart_name'
   ], [
@@ -289,7 +293,7 @@ router5.post('/insert/shopping_carts', function(req, res) {
   });
 });
 
-router5.put('/update/shopping_carts/:id', function(req, res) {
+router.put('/update/shopping_carts/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   shopping_carts.updateOne({
@@ -305,7 +309,7 @@ router5.put('/update/shopping_carts/:id', function(req, res) {
   });
 });
 
-router5.delete('/delete/shopping_carts/:id', function(req, res) {
+router.delete('/delete/shopping_carts/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   shopping_carts.deleteOne({
@@ -320,24 +324,26 @@ router5.delete('/delete/shopping_carts/:id', function(req, res) {
     }
   });
 });
-};
+
 
 //*******************************************************
+
 // Create the shopping groups routes and associated logic
+
 //*******************************************************
-module.exports = (router6, visitor) {
-router6.get('/all/shopping_groups', function(req, res) {
+
+router.get('/all/shopping_groups', function(req, res) {
   shopping_groups.selectAll(function(data) {
     var hbsObject6 = {
       shopping_groups: data
     };
     // console.log(hbsObject);
-    res.render('index', hbsObject6);
+    res.json('index', hbsObject6);
     visitor.pageview('/all/shopping_groups').send();
   });
 });
 
-router6.post('/insert/shopping_groups', function(req, res) {
+router.post('/insert/shopping_groups', function(req, res) {
   shopping_groups.insertOne([
     'group_name'
   ], [
@@ -348,7 +354,7 @@ router6.post('/insert/shopping_groups', function(req, res) {
   });
 });
 
-router6.put('/update/shopping_groups/:id', function(req, res) {
+router.put('/update/shopping_groups/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   shopping_groups.updateOne({
@@ -364,7 +370,7 @@ router6.put('/update/shopping_groups/:id', function(req, res) {
   });
 });
 
-router6.delete('/delete/shopping_groups/:id', function(req, res) {
+router.delete('/delete/shopping_groups/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   shopping_groups.deleteOne({
@@ -379,24 +385,27 @@ router6.delete('/delete/shopping_groups/:id', function(req, res) {
     }
   });
 });
-};
+
 
 //***********************************************************
+
 // Create the shopping list items routes and associated logic
+
 //***********************************************************
-module.exports = (router7, visitor) {
-router7.get('/all/shoppinglist_items', function(req, res) {
-  shoppinglist_items.selectAll(function(data) {
+
+router.get('/all/shoppinglist_items/:id', function(req, res) {
+  var cart_id = req.params.id;
+  shoppinglist_items.selectAll(cart_id, function(data) {
     var hbsObject7 = {
       shoppinglist_items: data
     };
     // console.log(hbsObject);
-    res.render('index', hbsObject7);
+    res.json('index', hbsObject7);
     visitor.pageview('/all/shoppinglist_items').send();
   });
 });
 
-router7.post('/insert/shoppinglist_items', function(req, res) {
+router.post('/insert/shoppinglist_items', function(req, res) {
   shoppinglist_items.insertOne([
     'shopping_cart_id', 'product_name', 'product_id', 'category_id', 'brand_id', 'brand_name', 'comments', 'in_cart'
   ], [
@@ -407,7 +416,7 @@ router7.post('/insert/shoppinglist_items', function(req, res) {
   });
 });
 
-router7.put('/update/shoppinglist_items/:id', function(req, res) {
+router.put('/update/shoppinglist_items/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   shoppinglist_items.updateOne({
@@ -423,7 +432,7 @@ router7.put('/update/shoppinglist_items/:id', function(req, res) {
   });
 });
 
-router7.delete('/delete/shoppinglist_items/:id', function(req, res) {
+router.delete('/delete/shoppinglist_items/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   shoppinglist_items.deleteOne({
@@ -438,24 +447,26 @@ router7.delete('/delete/shoppinglist_items/:id', function(req, res) {
     }
   });
 });
-};
+
 
 //***********************************************************
+
 // Create the list favorites items routes and associated logic
+
 //***********************************************************
-module.exports = (router8, visitor) {
-router8.get('/all/list_favorites', function(req, res) {
+
+router.get('/all/list_favorites', function(req, res) {
   list_favorites.selectAll(function(data) {
     var hbsObject8 = {
       list_favorites: data
     };
     // console.log(hbsObject);
-    res.render('index', hbsObject8);
+    res.json('index', hbsObject8);
     visitor.pageview('/all/list_favorites').send();
   });
 });
 
-router8.post('/insert/list_favorites', function(req, res) {
+router.post('/insert/list_favorites', function(req, res) {
   list_favorites.insertOne([
     'shopping_group_id', 'product_name', 'product_id', 'brand_name', 'brand_id', 'category_name', 'category_id', 'comments'
   ], [
@@ -466,7 +477,7 @@ router8.post('/insert/list_favorites', function(req, res) {
   });
 });
 
-router8.put('/update/list_favorites/:id', function(req, res) {
+router.put('/update/list_favorites/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   list_favorites.updateOne({
@@ -482,7 +493,7 @@ router8.put('/update/list_favorites/:id', function(req, res) {
   });
 });
 
-router8.delete('/delete/list_favorites/:id', function(req, res) {
+router.delete('/delete/list_favorites/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   list_favorites.deleteOne({
@@ -497,17 +508,7 @@ router8.delete('/delete/list_favorites/:id', function(req, res) {
     }
   });
 });
-};
+
 
 // Export routes for server.js to use.
-//module.exports = {
-//  router1,
-//  router2,
-//  router3,
-//  router4,
-//  router5,
-//  router6,
-//  router7,
-//  router8,
-//  visitor
-//};
+module.exports = router;
