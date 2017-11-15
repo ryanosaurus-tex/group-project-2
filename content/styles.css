@@ -188,6 +188,6 @@ body {
 	border-color: #E37337;		
 }
 
-h1 {
-	color: #3B2B39;
+h2.card-title {
+	font-weight: 300;
 }
