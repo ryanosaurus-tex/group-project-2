@@ -32,7 +32,7 @@ router.get('/all/brands', function(req, res) {
       brands: data
     };
     // console.log(hbsObject);
-    res.json('index', hbsObject1);
+    res.json(hbsObject1);
     visitor.pageview('/all/brands').send();
   });
 });
@@ -94,7 +94,7 @@ router.get('/all/categories/:id', function(req, res) {
       categories: data
     };
     // console.log(hbsObject);
-    res.json('index', hbsObject2);
+    res.json(hbsObject2);
     visitor.pageview('/all/categories').send();
   });
 });
@@ -155,7 +155,7 @@ router.get('/all/grocery_users', function(req, res) {
       grocery_users: data
     };
     // console.log(hbsObject);
-    res.json('index', hbsObject3);
+    res.json(hbsObject3);
     visitor.pageview('/all/grocery_users').send();
   });
 });
@@ -216,7 +216,7 @@ router.get('/all/products', function(req, res) {
       products: data
     };
     // console.log(hbsObject);
-    res.json('index', hbsObject4);
+    res.json(hbsObject4);
     visitor.pageview('/all/products').send();
   });
 });
@@ -277,7 +277,7 @@ router.get('/all/shopping_carts', function(req, res) {
       shopping_carts: data
     };
     // console.log(hbsObject);
-    res.json('index', hbsObject5);
+    res.json(hbsObject5);
     visitor.pageview('/all/shopping_carts').send();
   });
 });
@@ -338,7 +338,7 @@ router.get('/all/shopping_groups', function(req, res) {
       shopping_groups: data
     };
     // console.log(hbsObject);
-    res.json('index', hbsObject6);
+    res.json(hbsObject6);
     visitor.pageview('/all/shopping_groups').send();
   });
 });
@@ -400,7 +400,7 @@ router.get('/all/shoppinglist_items/:id', function(req, res) {
       shoppinglist_items: data
     };
     // console.log(hbsObject);
-    res.json('index', hbsObject7);
+    res.json(hbsObject7);
     visitor.pageview('/all/shoppinglist_items').send();
   });
 });
@@ -461,7 +461,7 @@ router.get('/all/list_favorites', function(req, res) {
       list_favorites: data
     };
     // console.log(hbsObject);
-    res.json('index', hbsObject8);
+    res.json(hbsObject8);
     visitor.pageview('/all/list_favorites').send();
   });
 });
