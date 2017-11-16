@@ -78,6 +78,8 @@
                 </div>
               </div>
             </div> <!-- ...................................../ROW-1...................................................... -->
+            
+            
             <hr>
 
             <div class="row px-2 my-1"> <!-- ......................ROW-2 [+ List][_____________]  [ Lists ]................... -->
@@ -133,27 +135,35 @@
               </div>
             </div> <!-- ......................................./ROW-3............................................. -->
 
-            <!--
+            
 
-            <div class="row my-4 justify-content-center">  ..ROW-4.......[cart][middle][right].................                
-            <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+            <div class="row my-4 px-2">  <!-- ..ROW-4.......[cart][middle][right]................. -->
+            <div class="col-sm-12">              
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="Basic example">
 
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Left
-              </button> 
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary">
+                  <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Left
+                </button>
+              </div>
 
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Middle
-              </button>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary">
+                  <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Middle
+                </button>
+              </div>
 
-              <button type="button" class="btn btn-primary">
-                <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Right
-              </button>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary">
+                  <i class="fa fa-cog fa-lg mr-2" aria-hidden="true"></i>Right
+                </button>
+              </div>
                 
-            </div>                           
-            </div>   ......................................./ROW-4............................................   
+            </div>
+            </div>                          
+            </div>  <!--  ......................................./ROW-4............................................    -->
 
-            -->
+            
 
 
           </div> <!-- /.card-body -->
@@ -172,96 +182,35 @@
           <div class="card-body">
             
             <!--===FAVORITE ITEM EXAMPLE=================================================================-->
-            <div class="btn-group favoriteItem mb-2" role="group" aria-label="Button group with nested dropdown">              
-              
-              <!-- Add to list [[DROPDOWN BUTTON]] -->
-              <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-share" aria-hidden="true"></i><i class="fa fa-file-text" aria-hidden="true"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="#">User Shopping List #1</a>
-                  <a class="dropdown-item" href="#">User Shopping List #2</a>
-                </div>
+            <div class="row px-2 align-items-center">
+              <div class="col-sm-3">
+                 <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group with nested dropdown">
+                    <a class="btn btn-primary orangify" href="#" role="button">
+                      <i class="fa fa-share fa-fw mr-1" aria-hidden="true"></i><i class="fa fa-cubes fa-fw" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="btn-group addtoList">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-share fa-fw mr-1" aria-hidden="true"></i><i class="fa fa-file-text fa-fw" aria-hidden="true"></i>
+                      </button>
+                      <div class="dropdown-menu">                    
+                        
+                        <a class="dropdown-item" href="#">User Shopping List #1</a>
+                        <a class="dropdown-item" href="#">User Shopping List #2</a>                       
+                        
+                      </div>
+                    </div>                    
+                 </div>
+               </div>
+               <div class="col-sm-8">
+                <h4 class="mb-1 productName">Product Name 1</h4>
               </div>
 
-              <!-- Item Name [[DISABLED BUTTON]] -->
-              <button type="button" class="btn btn-outline-secondary" disabled>Product Name 1</button>
-
-              <!-- remove from favorites [[BUTTON]] -->
-              <button type="button" class="btn btn-danger"><i class="fa fa-window-close fa-lg" aria-hidden="true"></i></button>
-              
-            </div>
-            <!--==/FAVORITE ITEM EXAMPLE=================================================================-->
-
-            <!--===FAVORITE ITEM EXAMPLE 2===============================================================-->
-            <div class="btn-group favoriteItem mb-2" role="group" aria-label="Button group with nested dropdown">              
-              
-              <!-- Add to list [[DROPDOWN BUTTON]] -->
-              <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-share" aria-hidden="true"></i><i class="fa fa-file-text" aria-hidden="true"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="#">User Shopping List #1</a>
-                  <a class="dropdown-item" href="#">User Shopping List #2</a>
-                </div>
-              </div>
-
-              <!-- Item Name [[DISABLED BUTTON]] -->
-              <button type="button" class="btn btn-outline-secondary" disabled>Product Name 2</button>
-
-              <!-- remove from favorites [[BUTTON]] -->
-              <button type="button" class="btn btn-danger"><i class="fa fa-window-close fa-lg" aria-hidden="true"></i></button>
-              
-            </div>
-            <!--==/FAVORITE ITEM EXAMPLE=================================================================-->
-
-            <!--===FAVORITE ITEM EXAMPLE 3===============================================================-->
-            <div class="btn-group favoriteItem mb-2" role="group" aria-label="Button group with nested dropdown">              
-              
-              <!-- Add to list [[DROPDOWN BUTTON]] -->
-              <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-share" aria-hidden="true"></i><i class="fa fa-file-text" aria-hidden="true"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="#">User Shopping List #1</a>
-                  <a class="dropdown-item" href="#">User Shopping List #2</a>
-                </div>
-              </div>
-
-              <!-- Item Name [[DISABLED BUTTON]] -->
-              <button type="button" class="btn btn-outline-secondary" disabled>Product Name 3</button>
-
-              <!-- remove from favorites [[BUTTON]] -->
-              <button type="button" class="btn btn-danger"><i class="fa fa-window-close fa-lg" aria-hidden="true"></i></button>
-              
-            </div>
-            <!--==/FAVORITE ITEM EXAMPLE=================================================================-->
-
-            <!--===FAVORITE ITEM EXAMPLE 4===============================================================-->
-            <div class="btn-group favoriteItem mb-2" role="group" aria-label="Button group with nested dropdown">
-
-              <!-- Add to list [[DROPDOWN BUTTON]] -->
-              <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-share" aria-hidden="true"></i><i class="fa fa-file-text" aria-hidden="true"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="#">User Shopping List #1</a>
-                  <a class="dropdown-item" href="#">User Shopping List #2</a>
-                </div>
-              </div>
-
-              <!-- Item Name [[DISABLED BUTTON]] -->
-              <button type="button" class="btn btn-outline-secondary" disabled>Product Name 4</button>
-
-              <!-- remove from favorites [[BUTTON]] -->
-              <button type="button" class="btn btn-danger"><i class="fa fa-window-close fa-lg" aria-hidden="true"></i></button>
-              
-            </div>
-            <!--==/FAVORITE ITEM EXAMPLE=================================================================-->
+              <div class="col-sm-1">
+                <button type="button" class="btn btn-danger"><i class="fa fa-window-close fa-lg" aria-hidden="true"></i></button>
+              </div>          
+            </div>            
+            <!--==/FAVORITE ITEM EXAMPLE=================================================================-->            
 
           </div>
         </div>
