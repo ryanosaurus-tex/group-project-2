@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require('path');
 var ua = require('universal-analytics');
 var visitor = ua('UA-109501568-1');
 visitor.pageview().send();
@@ -27,6 +28,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var router = require('./controllers/shopController.js');
 
 app.use('/', router);
+
+// viewed at http://localhost:8080
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/views/index.html'));
+    visitor.pageview('/index').send();
+});
 
 // Starts the server to begin listening
 // =============================================================

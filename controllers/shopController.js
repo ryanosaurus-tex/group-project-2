@@ -2,6 +2,15 @@
 var express = require('express');
 var router = express.Router();
 
+//***************************************************
+
+// Add the universal analytics vars to use in router
+
+//***************************************************
+var ua = require('universal-analytics');
+var visitor = ua('UA-109501568-1');
+visitor.pageview().send();
+
 // Import the shopping model js files (brands, categories, grocery_users, products, shopping_cart, shopping_group, shoppinglist_items) to use its database functions.
 var brands = require('../models/brands.js');
   // brand_name, manufacturer_name, full_address, website
@@ -20,6 +29,7 @@ var shopping_groups = require('../models/shopping_groups.js');
 var shoppinglist_items = require('../models/shoppinglist_items.js');
   // shopping_cart_id, product_name, product_id, category_id, brand_id, brand_name, comments, in_cart
 
+
 //**********************************************
 
 // Create the brands routes and associated logic
@@ -31,7 +41,7 @@ router.get('/all/brands', function(req, res, visitor) {
     var hbsObject1 = {
       brands: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject1);
     res.json('index', hbsObject1);
     visitor.pageview('/all/brands').send();
   });
@@ -93,7 +103,7 @@ router.get('/all/categories/:id', function(req, res, visitor) {
     var hbsObject2 = {
       categories: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject2);
     res.json('index', hbsObject2);
     visitor.pageview('/all/categories').send();
   });
@@ -153,7 +163,7 @@ router.get('/all/grocery_users', function(req, res, visitor) {
     var hbsObject3 = {
       grocery_users: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject3);
     res.json('index', hbsObject3);
     visitor.pageview('/all/grocery_users').send();
   });
@@ -214,7 +224,7 @@ router.get('/all/products', function(req, res, visitor) {
     var hbsObject4 = {
       products: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject4);
     res.json('index', hbsObject4);
     visitor.pageview('/all/products').send();
   });
@@ -275,7 +285,7 @@ router.get('/all/shopping_carts', function(req, res, visitor) {
     var hbsObject5 = {
       shopping_carts: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject5);
     res.json('index', hbsObject5);
     visitor.pageview('/all/shopping_carts').send();
   });
@@ -336,7 +346,7 @@ router.get('/all/shopping_groups', function(req, res, visitor) {
     var hbsObject6 = {
       shopping_groups: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject6);
     res.json('index', hbsObject6);
     visitor.pageview('/all/shopping_groups').send();
   });
@@ -398,7 +408,7 @@ router.get('/all/shoppinglist_items/:id', function(req, res, visitor) {
     var hbsObject7 = {
       shoppinglist_items: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject7);
     res.json('index', hbsObject7);
     visitor.pageview('/all/shoppinglist_items').send();
   });
@@ -459,7 +469,7 @@ router.get('/all/list_favorites', function(req, res, visitor) {
     var hbsObject8 = {
       list_favorites: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject8);
     res.json('index', hbsObject8);
     visitor.pageview('/all/list_favorites').send();
   });
