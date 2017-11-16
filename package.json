@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/ryanosaurus-tex/group-project-2#readme",
   "dependencies": {
+    "ajax": "0.0.4",
     "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
     "mysql": "^2.15.0",
     "universal-analytics": "^0.4.15"
   }
